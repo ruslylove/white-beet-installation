@@ -3,25 +3,25 @@
 ## Install Debian
 
 * add user as sudoer
-```
+```console
 su -
 sudo usermod -aG sudo USERNAME
 ```
 
 * add repository
 
-```
+```console
 sudo sed -e '/security/s/^/#/' -i /etc/apt/sources.list
 echo "deb http://deb.debian.org/debian-security/ bookworm-security main" |
 sudo tee -a /etc/apt/sources.list
 ```
 * install build packages
-```
+```console
 sudo apt update
 sudo apt install git build-essential python3-venv python3-dev libpcap-dev
 ```
 ## setup FreeV2G
-```
+```console
 git clone https://github.com/SEVENSTAX/FreeV2G
 cd FreeV2G/
 python3 -m venv .venv
@@ -31,7 +31,7 @@ pip install Cython
 pip install python-libpcap
 ```
 # check MAC Address of WHITE-beet board [MAC - 2]
-```
+```console
 ip link show
 sudo .venv/bin/python3 Application.py eth -i enp3s0 -m c4:93:00:48:ac:f0 -r EVSE
 ```
