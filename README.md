@@ -1,6 +1,6 @@
-## white-beet-installation
+# white-beet-installation
 
-# Install Debian
+## Install Debian
 
 * add user as sudoer
 ```
@@ -8,19 +8,19 @@ su -
 sudo usermod -aG sudo USERNAME
 ```
 
-# add repository
+* add repository
 
 ```
 sudo sed -e '/security/s/^/#/' -i /etc/apt/sources.list
 echo "deb http://deb.debian.org/debian-security/ bookworm-security main" |
 sudo tee -a /etc/apt/sources.list
 ```
-# install build packages
+* install build packages
 ```
 sudo apt update
 sudo apt install git build-essential python3-venv python3-dev libpcap-dev
 ```
-# setup FreeV2G
+## setup FreeV2G
 ```
 git clone https://github.com/SEVENSTAX/FreeV2G
 cd FreeV2G/
